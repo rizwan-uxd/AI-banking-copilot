@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ins_dining_increase",
+    "icon": "trend-up",
+    "title": "Dining spend increased by 15%",
+    "subtitle": "Vs last month",
+    "date": "2026-07-12"
+  },
+  {
+    "id": "ins_card_savings",
+    "icon": "banknote",
+    "title": "Could have saved AED 150",
+    "subtitle": "by applying to noon credit card",
+    "date": "2026-04-21"
+  },
+  {
+    "id": "ins_monthly_savings",
+    "icon": "lightbulb",
+    "title": "Save AED 1,200 this month",
+    "subtitle": "3 ways to save",
+    "date": "2026-04-16"
+  }
+]

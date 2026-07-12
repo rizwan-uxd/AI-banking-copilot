@@ -1,0 +1,37 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/assets/*": [
+        "./assets/*"
+      ],
+      "@atlas/ui-native": [
+        "./vendor/atlas-ui-native/components"
+      ],
+      "@atlas/ui-native/theme": [
+        "./vendor/atlas-ui-native/theme"
+      ],
+      "@atlas/ui-native/theme/context": [
+        "./vendor/atlas-ui-native/theme/ThemeProvider"
+      ],
+      "@atlas/ui-native/tokens": [
+        "./vendor/atlas-ui-native/tokens/atlas.tokens"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "vendor"
+  ]
+}

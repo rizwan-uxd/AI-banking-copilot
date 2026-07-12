@@ -1,0 +1,29 @@
+[
+  {
+    "id": "acc_checking_primary",
+    "name": "Everyday Checking",
+    "type": "checking",
+    "balanceCents": 342518,
+    "currency": "USD",
+    "institution": "Northbridge Bank",
+    "last4": "4821"
+  },
+  {
+    "id": "acc_savings_primary",
+    "name": "High-Yield Savings",
+    "type": "savings",
+    "balanceCents": 1284900,
+    "currency": "USD",
+    "institution": "Northbridge Bank",
+    "last4": "9027"
+  },
+  {
+    "id": "acc_credit_primary",
+    "name": "Rewards Credit Card",
+    "type": "credit",
+    "balanceCents": -68734,
+    "currency": "USD",
+    "institution": "Northbridge Bank",
+    "last4": "1153"
+  }
+]

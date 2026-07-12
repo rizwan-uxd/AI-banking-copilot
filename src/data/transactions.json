@@ -1,0 +1,1072 @@
+[
+  {
+    "id": "txn_0004",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_citypower",
+    "amountCents": -8420,
+    "category": "bills",
+    "date": "2026-07-12",
+    "description": "City Power & Light",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0022",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_target",
+    "amountCents": -6354,
+    "category": "shopping",
+    "date": "2026-07-12",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0023",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -1649,
+    "category": "transport",
+    "date": "2026-07-11",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0024",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -7795,
+    "category": "shopping",
+    "date": "2026-07-10",
+    "description": "Amazon",
+    "status": "pending"
+  },
+  {
+    "id": "txn_0025",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_greenfield_grocer",
+    "amountCents": -4229,
+    "category": "groceries",
+    "date": "2026-07-09",
+    "description": "Greenfield Grocer",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0003",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_icloud",
+    "amountCents": -299,
+    "category": "subscriptions",
+    "date": "2026-07-08",
+    "description": "iCloud+",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0026",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -892,
+    "category": "transport",
+    "date": "2026-07-08",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0027",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_target",
+    "amountCents": -3972,
+    "category": "shopping",
+    "date": "2026-07-07",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0028",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_metro_transit",
+    "amountCents": -250,
+    "category": "transport",
+    "date": "2026-07-06",
+    "description": "Metro Transit",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0002",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_netflix",
+    "amountCents": -1549,
+    "category": "subscriptions",
+    "date": "2026-07-05",
+    "description": "Netflix",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0029",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -1494,
+    "category": "transport",
+    "date": "2026-07-04",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0001",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_spotify",
+    "amountCents": -1099,
+    "category": "subscriptions",
+    "date": "2026-07-03",
+    "description": "Spotify",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0030",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -8686,
+    "category": "shopping",
+    "date": "2026-07-03",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0031",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_the_ramen_bar",
+    "amountCents": -3097,
+    "category": "dining",
+    "date": "2026-07-02",
+    "description": "The Ramen Bar",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0102",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_internal_transfer",
+    "amountCents": -50000,
+    "category": "transfer",
+    "date": "2026-07-02",
+    "description": "Transfer to High-Yield Savings",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0103",
+    "accountId": "acc_savings_primary",
+    "merchantId": "mer_internal_transfer",
+    "amountCents": 50000,
+    "category": "transfer",
+    "date": "2026-07-02",
+    "description": "Transfer from Everyday Checking",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0005",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_horizon_realty",
+    "amountCents": -185000,
+    "category": "bills",
+    "date": "2026-07-01",
+    "description": "Horizon Realty",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0013",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_acme_corp",
+    "amountCents": 420000,
+    "category": "income",
+    "date": "2026-06-30",
+    "description": "Acme Corp Payroll",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0032",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_metro_transit",
+    "amountCents": -250,
+    "category": "transport",
+    "date": "2026-06-30",
+    "description": "Metro Transit",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0033",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_blue_bottle",
+    "amountCents": -803,
+    "category": "dining",
+    "date": "2026-06-29",
+    "description": "Blue Bottle Coffee",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0034",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_target",
+    "amountCents": -2620,
+    "category": "shopping",
+    "date": "2026-06-29",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0035",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_the_ramen_bar",
+    "amountCents": -2441,
+    "category": "dining",
+    "date": "2026-06-28",
+    "description": "The Ramen Bar",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0036",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_blue_bottle",
+    "amountCents": -815,
+    "category": "dining",
+    "date": "2026-06-28",
+    "description": "Blue Bottle Coffee",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0037",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -11936,
+    "category": "shopping",
+    "date": "2026-06-27",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0038",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_blue_bottle",
+    "amountCents": -500,
+    "category": "dining",
+    "date": "2026-06-26",
+    "description": "Blue Bottle Coffee",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0039",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_amc_theatres",
+    "amountCents": -1768,
+    "category": "entertainment",
+    "date": "2026-06-25",
+    "description": "AMC Theatres",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0040",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_trader_joes",
+    "amountCents": -4835,
+    "category": "groceries",
+    "date": "2026-06-24",
+    "description": "Trader Joe's",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0041",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_trader_joes",
+    "amountCents": -4577,
+    "category": "groceries",
+    "date": "2026-06-23",
+    "description": "Trader Joe's",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0042",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_target",
+    "amountCents": -4019,
+    "category": "shopping",
+    "date": "2026-06-22",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0043",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_greenfield_grocer",
+    "amountCents": -7805,
+    "category": "groceries",
+    "date": "2026-06-20",
+    "description": "Greenfield Grocer",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0044",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amc_theatres",
+    "amountCents": -1976,
+    "category": "entertainment",
+    "date": "2026-06-20",
+    "description": "AMC Theatres",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0045",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -4348,
+    "category": "shopping",
+    "date": "2026-06-18",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0046",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_metro_transit",
+    "amountCents": -250,
+    "category": "transport",
+    "date": "2026-06-16",
+    "description": "Metro Transit",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0010",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_metro_wireless",
+    "amountCents": -6500,
+    "category": "bills",
+    "date": "2026-06-15",
+    "description": "Metro Wireless",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0012",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_acme_corp",
+    "amountCents": 420000,
+    "category": "income",
+    "date": "2026-06-15",
+    "description": "Acme Corp Payroll",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0047",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_blue_bottle",
+    "amountCents": -647,
+    "category": "dining",
+    "date": "2026-06-15",
+    "description": "Blue Bottle Coffee",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0048",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_the_ramen_bar",
+    "amountCents": -2005,
+    "category": "dining",
+    "date": "2026-06-14",
+    "description": "The Ramen Bar",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0049",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_metro_transit",
+    "amountCents": -250,
+    "category": "transport",
+    "date": "2026-06-13",
+    "description": "Metro Transit",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0009",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_citypower",
+    "amountCents": -8420,
+    "category": "bills",
+    "date": "2026-06-12",
+    "description": "City Power & Light",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0008",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_icloud",
+    "amountCents": -299,
+    "category": "subscriptions",
+    "date": "2026-06-08",
+    "description": "iCloud+",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0050",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_the_ramen_bar",
+    "amountCents": -2682,
+    "category": "dining",
+    "date": "2026-06-07",
+    "description": "The Ramen Bar",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0051",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_trader_joes",
+    "amountCents": -5578,
+    "category": "groceries",
+    "date": "2026-06-06",
+    "description": "Trader Joe's",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0052",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_amc_theatres",
+    "amountCents": -2410,
+    "category": "entertainment",
+    "date": "2026-06-06",
+    "description": "AMC Theatres",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0007",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_netflix",
+    "amountCents": -1549,
+    "category": "subscriptions",
+    "date": "2026-06-05",
+    "description": "Netflix",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0053",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_trader_joes",
+    "amountCents": -3331,
+    "category": "groceries",
+    "date": "2026-06-05",
+    "description": "Trader Joe's",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0054",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -3723,
+    "category": "transport",
+    "date": "2026-06-05",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0006",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_spotify",
+    "amountCents": -1099,
+    "category": "subscriptions",
+    "date": "2026-06-03",
+    "description": "Spotify",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0055",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -9417,
+    "category": "shopping",
+    "date": "2026-06-03",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0056",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_target",
+    "amountCents": -7601,
+    "category": "shopping",
+    "date": "2026-06-02",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0057",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -3787,
+    "category": "transport",
+    "date": "2026-06-02",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0104",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_internal_transfer",
+    "amountCents": -50000,
+    "category": "transfer",
+    "date": "2026-06-02",
+    "description": "Transfer to High-Yield Savings",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0105",
+    "accountId": "acc_savings_primary",
+    "merchantId": "mer_internal_transfer",
+    "amountCents": 50000,
+    "category": "transfer",
+    "date": "2026-06-02",
+    "description": "Transfer from Everyday Checking",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0011",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_horizon_realty",
+    "amountCents": -185000,
+    "category": "bills",
+    "date": "2026-06-01",
+    "description": "Horizon Realty",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0058",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_metro_transit",
+    "amountCents": -250,
+    "category": "transport",
+    "date": "2026-06-01",
+    "description": "Metro Transit",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0059",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_greenfield_grocer",
+    "amountCents": -2849,
+    "category": "groceries",
+    "date": "2026-05-31",
+    "description": "Greenfield Grocer",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0021",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_acme_corp",
+    "amountCents": 420000,
+    "category": "income",
+    "date": "2026-05-30",
+    "description": "Acme Corp Payroll",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0060",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_target",
+    "amountCents": -4970,
+    "category": "shopping",
+    "date": "2026-05-30",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0061",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -9771,
+    "category": "shopping",
+    "date": "2026-05-27",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0062",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -2308,
+    "category": "transport",
+    "date": "2026-05-26",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0063",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_blue_bottle",
+    "amountCents": -604,
+    "category": "dining",
+    "date": "2026-05-25",
+    "description": "Blue Bottle Coffee",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0064",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -3001,
+    "category": "transport",
+    "date": "2026-05-24",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0065",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_greenfield_grocer",
+    "amountCents": -8817,
+    "category": "groceries",
+    "date": "2026-05-22",
+    "description": "Greenfield Grocer",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0066",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_greenfield_grocer",
+    "amountCents": -5017,
+    "category": "groceries",
+    "date": "2026-05-21",
+    "description": "Greenfield Grocer",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0067",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_greenfield_grocer",
+    "amountCents": -9545,
+    "category": "groceries",
+    "date": "2026-05-20",
+    "description": "Greenfield Grocer",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0068",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_target",
+    "amountCents": -5532,
+    "category": "shopping",
+    "date": "2026-05-20",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0069",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -7259,
+    "category": "shopping",
+    "date": "2026-05-17",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0070",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_the_ramen_bar",
+    "amountCents": -1911,
+    "category": "dining",
+    "date": "2026-05-16",
+    "description": "The Ramen Bar",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0018",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_metro_wireless",
+    "amountCents": -6500,
+    "category": "bills",
+    "date": "2026-05-15",
+    "description": "Metro Wireless",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0020",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_acme_corp",
+    "amountCents": 420000,
+    "category": "income",
+    "date": "2026-05-15",
+    "description": "Acme Corp Payroll",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0071",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_amc_theatres",
+    "amountCents": -2079,
+    "category": "entertainment",
+    "date": "2026-05-15",
+    "description": "AMC Theatres",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0072",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -7340,
+    "category": "shopping",
+    "date": "2026-05-14",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0073",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -3137,
+    "category": "transport",
+    "date": "2026-05-13",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0017",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_citypower",
+    "amountCents": -8420,
+    "category": "bills",
+    "date": "2026-05-12",
+    "description": "City Power & Light",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0074",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_amc_theatres",
+    "amountCents": -2980,
+    "category": "entertainment",
+    "date": "2026-05-12",
+    "description": "AMC Theatres",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0075",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -10539,
+    "category": "shopping",
+    "date": "2026-05-12",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0076",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_the_ramen_bar",
+    "amountCents": -2011,
+    "category": "dining",
+    "date": "2026-05-11",
+    "description": "The Ramen Bar",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0077",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_target",
+    "amountCents": -6503,
+    "category": "shopping",
+    "date": "2026-05-10",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0078",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_blue_bottle",
+    "amountCents": -766,
+    "category": "dining",
+    "date": "2026-05-09",
+    "description": "Blue Bottle Coffee",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0079",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -3207,
+    "category": "shopping",
+    "date": "2026-05-09",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0016",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_icloud",
+    "amountCents": -299,
+    "category": "subscriptions",
+    "date": "2026-05-08",
+    "description": "iCloud+",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0080",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -1046,
+    "category": "transport",
+    "date": "2026-05-08",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0081",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -5748,
+    "category": "shopping",
+    "date": "2026-05-08",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0082",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -947,
+    "category": "transport",
+    "date": "2026-05-07",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0083",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_target",
+    "amountCents": -7498,
+    "category": "shopping",
+    "date": "2026-05-06",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0015",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_netflix",
+    "amountCents": -1549,
+    "category": "subscriptions",
+    "date": "2026-05-05",
+    "description": "Netflix",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0084",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_blue_bottle",
+    "amountCents": -878,
+    "category": "dining",
+    "date": "2026-05-04",
+    "description": "Blue Bottle Coffee",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0014",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_spotify",
+    "amountCents": -1099,
+    "category": "subscriptions",
+    "date": "2026-05-03",
+    "description": "Spotify",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0085",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_the_ramen_bar",
+    "amountCents": -1579,
+    "category": "dining",
+    "date": "2026-05-03",
+    "description": "The Ramen Bar",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0106",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_internal_transfer",
+    "amountCents": -50000,
+    "category": "transfer",
+    "date": "2026-05-03",
+    "description": "Transfer to High-Yield Savings",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0107",
+    "accountId": "acc_savings_primary",
+    "merchantId": "mer_internal_transfer",
+    "amountCents": 50000,
+    "category": "transfer",
+    "date": "2026-05-03",
+    "description": "Transfer from Everyday Checking",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0019",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_horizon_realty",
+    "amountCents": -185000,
+    "category": "bills",
+    "date": "2026-05-01",
+    "description": "Horizon Realty",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0086",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -2460,
+    "category": "transport",
+    "date": "2026-05-01",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0087",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -11121,
+    "category": "shopping",
+    "date": "2026-04-30",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0088",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_metro_transit",
+    "amountCents": -250,
+    "category": "transport",
+    "date": "2026-04-27",
+    "description": "Metro Transit",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0089",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_target",
+    "amountCents": -4356,
+    "category": "shopping",
+    "date": "2026-04-26",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0090",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_trader_joes",
+    "amountCents": -1887,
+    "category": "groceries",
+    "date": "2026-04-25",
+    "description": "Trader Joe's",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0091",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_target",
+    "amountCents": -7187,
+    "category": "shopping",
+    "date": "2026-04-25",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0092",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_trader_joes",
+    "amountCents": -5120,
+    "category": "groceries",
+    "date": "2026-04-23",
+    "description": "Trader Joe's",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0093",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -1498,
+    "category": "transport",
+    "date": "2026-04-22",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0094",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -1738,
+    "category": "shopping",
+    "date": "2026-04-22",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0095",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_amazon",
+    "amountCents": -3911,
+    "category": "shopping",
+    "date": "2026-04-20",
+    "description": "Amazon",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0096",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_trader_joes",
+    "amountCents": -5507,
+    "category": "groceries",
+    "date": "2026-04-18",
+    "description": "Trader Joe's",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0097",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -2907,
+    "category": "transport",
+    "date": "2026-04-17",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0098",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_target",
+    "amountCents": -4155,
+    "category": "shopping",
+    "date": "2026-04-16",
+    "description": "Target",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0099",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_uber",
+    "amountCents": -2450,
+    "category": "transport",
+    "date": "2026-04-15",
+    "description": "Uber",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0100",
+    "accountId": "acc_credit_primary",
+    "merchantId": "mer_greenfield_grocer",
+    "amountCents": -8749,
+    "category": "groceries",
+    "date": "2026-04-15",
+    "description": "Greenfield Grocer",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0101",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_greenfield_grocer",
+    "amountCents": -9049,
+    "category": "groceries",
+    "date": "2026-04-13",
+    "description": "Greenfield Grocer",
+    "status": "posted"
+  }
+]

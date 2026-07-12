@@ -1,0 +1,30 @@
+[
+  {
+    "id": "conv_deduction_query",
+    "icon": "message",
+    "title": "Why 23 USD deducted?",
+    "subtitle": "AI query",
+    "date": "2026-07-12"
+  },
+  {
+    "id": "conv_dining_analysis",
+    "icon": "chart",
+    "title": "Dining spend analysis",
+    "subtitle": "Monthly insights",
+    "date": "2026-04-21"
+  },
+  {
+    "id": "conv_travel_card",
+    "icon": "chart",
+    "title": "Best card for travel",
+    "subtitle": "Product suggestion",
+    "date": "2026-04-16"
+  },
+  {
+    "id": "conv_recurring_bills",
+    "icon": "chart",
+    "title": "My recurring AI bills",
+    "subtitle": "Monthly insights",
+    "date": "2026-02-01"
+  }
+]

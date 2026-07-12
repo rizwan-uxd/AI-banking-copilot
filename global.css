@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Semantic color tokens as CSS variables (rgb triplets, used with Tailwind's
+ * `rgb(var(--x) / <alpha-value>)` pattern for opacity support). Values mirror
+ * `src/design-system/theme.ts` — kept in sync manually since Metro can't
+ * import TS into CSS. `--color-text-primary`/`--color-text-muted`/
+ * `--color-accent` and `--color-surface-muted`/`--color-navy`/
+ * `--color-on-accent` lock the Home screen's project-specific colors, sourced
+ * from Atlas's own Figma variables (Figma `LGV5xzUyUxDEReq6FY4zn7`, node
+ * 224:1496), approved 2026-07-12. `--color-text-muted` is a solid color —
+ * the 80% opacity ("Text color subtle") is applied separately at each usage
+ * site, matching Figma's own fill-color/fill-opacity separation.
+ */
+:root {
+  --color-background: 255 255 255;
+  --color-surface: 255 255 255;
+  --color-surface-elevated: 255 255 255;
+  --color-surface-muted: 229 235 244;
+  --color-border: 228 232 235;
+  --color-text-primary: 10 29 72;
+  --color-text-secondary: 77 85 93;
+  --color-text-muted: 10 25 83;
+  --color-accent: 35 80 190;
+  --color-accent-muted: 241 246 255;
+  --color-navy: 10 29 72;
+  --color-on-accent: 255 255 255;
+  --color-positive: 0 138 68;
+  --color-negative: 209 18 38;
+  --color-warning: 219 163 0;
+  --color-info: 0 135 196;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: 8 10 13;
+    --color-surface: 20 24 28;
+    --color-surface-elevated: 36 41 46;
+    --color-surface-muted: 36 41 46;
+    --color-border: 36 41 46;
+    --color-text-primary: 249 250 251;
+    --color-text-secondary: 154 162 169;
+    --color-text-muted: 107 116 124;
+    --color-accent: 75 127 247;
+    --color-accent-muted: 10 29 72;
+    --color-navy: 10 29 72;
+    --color-on-accent: 255 255 255;
+    --color-positive: 1 163 93;
+    --color-negative: 235 66 68;
+    --color-warning: 219 163 0;
+    --color-info: 0 160 218;
+  }
+}

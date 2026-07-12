@@ -1,0 +1,19 @@
+[
+  { "id": "mer_greenfield_grocer", "name": "Greenfield Grocer", "defaultCategory": "groceries" },
+  { "id": "mer_trader_joes", "name": "Trader Joe's", "defaultCategory": "groceries" },
+  { "id": "mer_blue_bottle", "name": "Blue Bottle Coffee", "defaultCategory": "dining" },
+  { "id": "mer_the_ramen_bar", "name": "The Ramen Bar", "defaultCategory": "dining" },
+  { "id": "mer_uber", "name": "Uber", "defaultCategory": "transport" },
+  { "id": "mer_metro_transit", "name": "Metro Transit", "defaultCategory": "transport" },
+  { "id": "mer_amazon", "name": "Amazon", "defaultCategory": "shopping" },
+  { "id": "mer_target", "name": "Target", "defaultCategory": "shopping" },
+  { "id": "mer_amc_theatres", "name": "AMC Theatres", "defaultCategory": "entertainment" },
+  { "id": "mer_spotify", "name": "Spotify", "defaultCategory": "subscriptions" },
+  { "id": "mer_netflix", "name": "Netflix", "defaultCategory": "subscriptions" },
+  { "id": "mer_icloud", "name": "iCloud+", "defaultCategory": "subscriptions" },
+  { "id": "mer_citypower", "name": "City Power & Light", "defaultCategory": "bills" },
+  { "id": "mer_metro_wireless", "name": "Metro Wireless", "defaultCategory": "bills" },
+  { "id": "mer_horizon_realty", "name": "Horizon Realty", "defaultCategory": "bills" },
+  { "id": "mer_acme_corp", "name": "Acme Corp Payroll", "defaultCategory": "income" },
+  { "id": "mer_internal_transfer", "name": "Transfer", "defaultCategory": "transfer" }
+]
