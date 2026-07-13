@@ -1,6 +1,6 @@
 import { ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { ChevronLeft, CreditCard, MessageSquareMore, Search, TriangleAlert } from "lucide-react-native";
+import { ChevronLeft, Search } from "lucide-react-native";
 
 import { Header } from "@atlas/ui-native";
 
@@ -12,6 +12,11 @@ import { formatShortDate } from "@/lib/date";
 import { HeroBanner } from "./components/HeroBanner";
 import { ListRow } from "./components/ListRow";
 import { QuickActionChip } from "./components/QuickActionChip";
+import {
+  CreditCardFilledIcon,
+  MessageSquareMoreFilledIcon,
+  TriangleAlertFilledIcon,
+} from "./components/QuickActionIcons";
 import { SearchBar } from "./components/SearchBar";
 import { SectionHeader } from "./components/SectionHeader";
 import { conversationIcons, insightIcons } from "./icons";
@@ -69,16 +74,16 @@ export function HomeScreen() {
                 showsHorizontalScrollIndicator={false}
                 contentContainerClassName="gap-2 px-4"
               >
-                <QuickActionChip icon={MessageSquareMore} label={"Explain\ntransactions"} />
-                <QuickActionChip icon={Search} label={"Analyze\nspending"} />
-                <QuickActionChip icon={CreditCard} label={"Find best\nproducts"} />
-                <QuickActionChip icon={TriangleAlert} label={"Report an\nissue"} />
+                <QuickActionChip icon={<MessageSquareMoreFilledIcon size={16} />} label={"Explain\ntransactions"} />
+                <QuickActionChip icon={<Icon icon={Search} size={16} color="navy" />} label={"Analyze\nspending"} />
+                <QuickActionChip icon={<CreditCardFilledIcon size={16} />} label={"Find best\nproducts"} />
+                <QuickActionChip icon={<TriangleAlertFilledIcon size={16} />} label={"Report an\nissue"} />
               </ScrollView>
             </View>
           </View>
         </HeroBanner>
 
-        <View className="gap-6 rounded-t-2xl bg-surface-muted px-4 pt-6 pb-8">
+        <View className="gap-6 rounded-t-xl bg-surface-muted px-4 pt-6 pb-8">
           <View className="gap-2">
             <SectionHeader title="Proactive insights" actionLabel={`View all(${insights.length})`} />
             <View className="gap-2">

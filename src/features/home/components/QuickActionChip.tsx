@@ -1,12 +1,13 @@
-import type { LucideIcon } from "lucide-react-native";
+import type { ReactNode } from "react";
 import { View } from "react-native";
 
 import { Card } from "@atlas/ui-native";
 
-import { Icon, Text } from "@/components/ui";
+import { PressableScale, Text } from "@/components/ui";
 
 export interface QuickActionChipProps {
-  icon: LucideIcon;
+  /** Rendered icon node (16px). Filled Figma icons or a navy lucide glyph. */
+  icon: ReactNode;
   label: string;
   onPress?: () => void;
 }
@@ -17,25 +18,29 @@ export interface QuickActionChipProps {
  * "filled") rather than a new primitive — reuse-first per CLAUDE.md. The
  * hairline border in Figma (`rgba(255,255,255,0.15)`) is passed via Card's
  * `style` prop since `filled` carries no border by default.
+ *
+ * Per Figma the icon sits directly on the light chip (no navy badge) with a
+ * uniform 12px inset (`p-[12px]`). The caller supplies the rendered 16px
+ * glyph — filled two-tone icons (`QuickActionIcons`) or a navy lucide `Icon`.
+ * Wrapped in `PressableScale` for the on-tap feedback; Atlas `Card` stays a
+ * presentational surface (no `onPress`) so the scale/dim is owned in one place.
  */
 export function QuickActionChip({ icon, label, onPress }: QuickActionChipProps) {
   return (
-    <Card
-      variant="filled"
-      padding="none"
-      onPress={onPress}
-      accessibilityLabel={label}
-      style={{ width: 96, borderWidth: 1, borderColor: "rgba(255,255,255,0.15)" }}
-    >
-      <View style={{ gap: 8, paddingHorizontal: 8, paddingVertical: 10 }}>
-        <View className="size-6 items-center justify-center bg-navy" style={{ borderRadius: 6 }}>
-          <Icon icon={icon} size={15} color="onAccent" strokeWidth={2.5} />
+    <PressableScale onPress={onPress} accessibilityRole="button" accessibilityLabel={label.replace("\n", " ")}>
+      <Card
+        variant="filled"
+        padding="none"
+        style={{ width: 96, borderWidth: 1, borderColor: "rgba(255,255,255,0.15)" }}
+      >
+        <View style={{ gap: 8, padding: 12 }}>
+          {icon}
+          <Text variant="caption" color="accent" className="font-sans-medium" numberOfLines={2}>
+            {label}
+          </Text>
         </View>
-        <Text variant="caption" color="accent" className="font-sans-medium" numberOfLines={2}>
-          {label}
-        </Text>
-      </View>
-    </Card>
+      </Card>
+    </PressableScale>
   );
 }
 

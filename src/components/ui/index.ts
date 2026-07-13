@@ -12,3 +12,5 @@ export { Divider } from "./Divider";
 export type { DividerProps } from "./Divider";
 export { Icon } from "./Icon";
 export type { IconProps } from "./Icon";
+export { PressableScale } from "./PressableScale";
+export type { PressableScaleProps } from "./PressableScale";

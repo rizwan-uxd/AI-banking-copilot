@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react-native";
-import { Pressable, View } from "react-native";
+import { View } from "react-native";
 
-import { Icon, Text } from "@/components/ui";
+import { Icon, PressableScale, Text } from "@/components/ui";
 
 export interface ListRowProps {
   icon: LucideIcon;
@@ -14,12 +14,18 @@ export interface ListRowProps {
 /**
  * Shared row for "Proactive insights" and "Recent conversations" (Figma
  * reuses the identical "Row N" layout for both sections — nodes 224:1513 and
- * 256:1009). Renders as a plain `View` unless `onPress` is supplied — Figma
- * shows no prototype destination for these rows, so none is wired up yet.
+ * 256:1009). Always a `PressableScale` so the row gives on-tap feedback; it's
+ * only announced as a button (with `onPress`) when a destination is wired —
+ * Figma shows none yet, so the effect ships ahead of the routing.
  */
 export function ListRow({ icon, title, subtitle, date, onPress }: ListRowProps) {
-  const content = (
-    <>
+  return (
+    <PressableScale
+      onPress={onPress}
+      accessibilityRole={onPress ? "button" : undefined}
+      accessibilityLabel={onPress ? `${title}, ${subtitle}, ${date}` : undefined}
+      style={{ height: 56, width: "100%", flexDirection: "row", alignItems: "center", gap: 16 }}
+    >
       <View
         className="size-8 items-center justify-center rounded-full bg-surface-elevated"
         accessible={false}
@@ -39,22 +45,7 @@ export function ListRow({ icon, title, subtitle, date, onPress }: ListRowProps) 
           {date}
         </Text>
       </View>
-    </>
-  );
-
-  if (!onPress) {
-    return <View className="h-14 w-full flex-row items-center gap-4">{content}</View>;
-  }
-
-  return (
-    <Pressable
-      onPress={onPress}
-      accessibilityRole="button"
-      accessibilityLabel={`${title}, ${subtitle}, ${date}`}
-      className="h-14 w-full flex-row items-center gap-4"
-    >
-      {content}
-    </Pressable>
+    </PressableScale>
   );
 }
 
