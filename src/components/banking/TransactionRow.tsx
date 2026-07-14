@@ -1,10 +1,10 @@
 import { ChevronRight } from "lucide-react-native";
-import { View } from "react-native";
+import { Pressable, View } from "react-native";
 
 import { Badge, Card } from "@atlas/ui-native";
 
 import { CategoryIcon } from "@/components/banking/CategoryIcon";
-import { Icon, PressableScale, Text } from "@/components/ui";
+import { Icon, Text } from "@/components/ui";
 import { getCategoryVisual } from "@/lib/category";
 import { formatCurrency } from "@/lib/currency";
 import { formatMediumDate } from "@/lib/date";
@@ -29,13 +29,15 @@ export interface TransactionRowProps {
 /**
  * Reusable transaction row (Figma "Explain a transaction" sheet row, reused verbatim for the
  * minimal Transactions tab list) — leading `CategoryIcon`, merchant + description + category
- * badge, trailing amount + date + chevron. The whole row is the tap target.
+ * badge, trailing amount + date + chevron. The whole row is the tap target. Plain `Pressable`, not
+ * `PressableScale` — per the user, rows throughout the app have no on-press scale/dim animation
+ * (unlike buttons/chips, which keep it).
  */
 export function TransactionRow({ transaction, merchant, currency, onPress }: TransactionRowProps) {
   const visual = getCategoryVisual(transaction.category);
 
   return (
-    <PressableScale
+    <Pressable
       onPress={onPress}
       accessibilityRole="button"
       accessibilityLabel={`${merchant.name}, ${formatCurrency(transaction.amountCents, currency)}, ${formatMediumDate(transaction.date)}`}
@@ -63,7 +65,7 @@ export function TransactionRow({ transaction, merchant, currency, onPress }: Tra
           <Icon icon={ChevronRight} size={18} color="muted" />
         </View>
       </Card>
-    </PressableScale>
+    </Pressable>
   );
 }
 

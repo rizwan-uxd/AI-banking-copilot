@@ -16,16 +16,17 @@ import { fontFamily } from "@/design-system";
 import { formatDayMonth, formatShortDate } from "@/lib/date";
 import type { Transaction } from "@/types";
 
+import { ListRow } from "@/components/banking/ListRow";
+import { SectionHeader } from "@/components/banking/SectionHeader";
+
 import { ExplainTransactionSheet } from "./components/ExplainTransactionSheet";
 import { HeroBanner } from "./components/HeroBanner";
-import { ListRow } from "./components/ListRow";
 import {
   CreditCardFilledIcon,
   MessageSquareMoreFilledIcon,
   TriangleAlertFilledIcon,
 } from "./components/QuickActionIcons";
 import { SearchBar } from "./components/SearchBar";
-import { SectionHeader } from "./components/SectionHeader";
 import { conversationIcons, insightIcons } from "./icons";
 
 /** Atlas Header's fixed content-row height (below the safe-area inset). */
@@ -104,7 +105,16 @@ export function HomeScreen() {
                   label={"Explain\ntransactions"}
                   onPress={() => explainSheetRef.current?.present()}
                 />
-                <QuickActionChip icon={<Icon icon={Search} size={16} color="navy" />} label={"Analyze\nspending"} />
+                <QuickActionChip
+                  icon={<Icon icon={Search} size={16} color="navy" />}
+                  label={"Analyze\nspending"}
+                  onPress={() =>
+                    router.push({
+                      pathname: "/copilot-analyze-spending",
+                      params: { query: "I want to analyze my spending." },
+                    })
+                  }
+                />
                 <QuickActionChip icon={<CreditCardFilledIcon size={16} />} label={"Find best\nproducts"} />
                 <QuickActionChip icon={<TriangleAlertFilledIcon size={16} />} label={"Report an\nissue"} />
               </ScrollView>

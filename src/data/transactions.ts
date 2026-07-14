@@ -22,3 +22,12 @@ export function getTransactionsByAccounts(accountIds: string[]): Transaction[] {
     .filter((transaction) => accountIds.includes(transaction.accountId))
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
+
+/** Earliest/latest transaction dates in the seed data — bounds the copilot custom date-range picker. */
+export function getTransactionDateBounds(): { minDate: string; maxDate: string } {
+  const dates = transactions.map((transaction) => transaction.date);
+  return {
+    minDate: dates.reduce((earliest, date) => (date < earliest ? date : earliest)),
+    maxDate: dates.reduce((latest, date) => (date > latest ? date : latest)),
+  };
+}

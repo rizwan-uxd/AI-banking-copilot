@@ -6,5 +6,6 @@
  */
 export function formatCurrency(amountCents: number, currency: string): string {
   const amount = Math.abs(amountCents) / 100;
-  return `${currency} ${amount.toFixed(2)}`;
+  const formatted = amount.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return `${currency} ${formatted}`;
 }

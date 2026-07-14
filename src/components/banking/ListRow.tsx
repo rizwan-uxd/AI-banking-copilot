@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react-native";
-import { View } from "react-native";
+import { Pressable, View } from "react-native";
 
-import { Icon, PressableScale, Text } from "@/components/ui";
+import { Icon, Text } from "@/components/ui";
 
 export interface ListRowProps {
   icon: LucideIcon;
@@ -14,13 +14,14 @@ export interface ListRowProps {
 /**
  * Shared row for "Proactive insights" and "Recent conversations" (Figma
  * reuses the identical "Row N" layout for both sections — nodes 224:1513 and
- * 256:1009). Always a `PressableScale` so the row gives on-tap feedback; it's
- * only announced as a button (with `onPress`) when a destination is wired —
- * Figma shows none yet, so the effect ships ahead of the routing.
+ * 256:1009). Plain `Pressable`, not `PressableScale` — per the user, rows
+ * throughout the app should have no on-press scale/dim animation (unlike
+ * buttons/chips, which keep it). Only announced as a button (with `onPress`)
+ * when a destination is wired — Figma shows none yet.
  */
 export function ListRow({ icon, title, subtitle, date, onPress }: ListRowProps) {
   return (
-    <PressableScale
+    <Pressable
       onPress={onPress}
       accessibilityRole={onPress ? "button" : undefined}
       accessibilityLabel={onPress ? `${title}, ${subtitle}, ${date}` : undefined}
@@ -45,7 +46,7 @@ export function ListRow({ icon, title, subtitle, date, onPress }: ListRowProps) 
           {date}
         </Text>
       </View>
-    </PressableScale>
+    </Pressable>
   );
 }
 
