@@ -15,3 +15,20 @@ export function formatShortDate(isoDate: string, now: Date = new Date()): string
   const mm = String(month).padStart(2, "0");
   return `${dd}/${mm}/${yy}`;
 }
+
+const MONTH_ABBREVIATIONS = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+/** Formats an ISO 8601 date (YYYY-MM-DD) as "20 Jun 2026" (copilot transaction-detail convention). */
+export function formatMediumDate(isoDate: string): string {
+  const [year, month, day] = isoDate.split("-").map(Number);
+  return `${day} ${MONTH_ABBREVIATIONS[month - 1]} ${year}`;
+}
+
+/** Formats an ISO 8601 date (YYYY-MM-DD) as "20 Jun" (no year) — used in auto-sent copilot questions. */
+export function formatDayMonth(isoDate: string): string {
+  const [, month, day] = isoDate.split("-").map(Number);
+  return `${day} ${MONTH_ABBREVIATIONS[month - 1]}`;
+}

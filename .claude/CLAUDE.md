@@ -93,7 +93,7 @@ These govern *how* work is done, not just the code. They override default agent 
 - **App stays on Expo 57** — never downgrade. Atlas is upgraded incrementally to catch up.
 - **Styling:** Atlas components keep StyleSheet + ThemeProvider (never rewrite). App-specific components **may** use NativeWind. **Never mix NativeWind and StyleSheet inside one component.**
 - **Typography overrides** live at the **app layer** for the prototype — no Metro alias hacks, no Atlas refactor yet. **Color overrides** are applied by injecting Atlas's `ThemeContext` value.
-- **Figma is the source of truth — always inspect Figma (file `cKYhfaHLCoyMHi9nKr63Ig`) before implementing a screen.**
+- **Figma is the source of truth — always inspect Figma (file `LGV5xzUyUxDEReq6FY4zn7`, "New banking chatbot") before implementing a screen.** (Supersedes the earlier `cKYhfaHLCoyMHi9nKr63Ig` reference for app screens; that file remains the Atlas component-library reference, see `decisions.md`.)
 - App-level `src/design-system/` holds **theme overrides layered on Atlas**, not a from-scratch token system. See `design-system.md` and ADR-011/012 in `decisions.md`.
 
 ## Coding rules

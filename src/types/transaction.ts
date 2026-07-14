@@ -23,4 +23,6 @@ export interface Transaction {
   date: string;
   description: string;
   status: TransactionStatus;
+  /** Bank reference number, e.g. "TXN291235". Not all transactions have one. */
+  referenceNumber?: string;
 }

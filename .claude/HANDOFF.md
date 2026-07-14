@@ -35,8 +35,9 @@ Dashboard) from Figma.
 - **Styling rule:** Atlas components stay StyleSheet + ThemeProvider (never rewrite). App components
   may use NativeWind. **Never mix NativeWind + StyleSheet in one component.**
 - **Overrides:** typography overrides at the app layer; color overrides by injecting Atlas
-  `ThemeContext`. **Figma is source of truth** (file `cKYhfaHLCoyMHi9nKr63Ig`) — inspect before
-  building any screen.
+  `ThemeContext`. **Figma is source of truth** (file `LGV5xzUyUxDEReq6FY4zn7`, "New banking
+  chatbot") — inspect before building any screen. (Supersedes the earlier `cKYhfaHLCoyMHi9nKr63Ig`
+  reference for app screens; that file is the separate Atlas component-library reference.)
 - **Components:** reuse Atlas first; app-specific components live in the app; recommend (never
   auto-move) promotion to Atlas only after proven reusable.
 

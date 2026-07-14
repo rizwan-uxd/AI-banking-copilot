@@ -1,17 +1,24 @@
+import { useRef } from "react";
 import { ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { router } from "expo-router";
 import { ChevronLeft, Search } from "lucide-react-native";
+import type { BottomSheetModal } from "@gorhom/bottom-sheet";
 
 import { Header } from "@atlas/ui-native";
 
+import { QuickActionChip } from "@/components/banking/QuickActionChip";
 import { Icon, Screen, Text } from "@/components/ui";
+import { getAccountById } from "@/data/accounts";
 import { getConversations, getInsights } from "@/data";
+import { getMerchantById } from "@/data/merchants";
 import { fontFamily } from "@/design-system";
-import { formatShortDate } from "@/lib/date";
+import { formatDayMonth, formatShortDate } from "@/lib/date";
+import type { Transaction } from "@/types";
 
+import { ExplainTransactionSheet } from "./components/ExplainTransactionSheet";
 import { HeroBanner } from "./components/HeroBanner";
 import { ListRow } from "./components/ListRow";
-import { QuickActionChip } from "./components/QuickActionChip";
 import {
   CreditCardFilledIcon,
   MessageSquareMoreFilledIcon,
@@ -32,11 +39,27 @@ export function HomeScreen() {
   const insets = useSafeAreaInsets();
   const insights = getInsights();
   const conversations = getConversations();
+  const explainSheetRef = useRef<BottomSheetModal>(null);
+
+  function handleSelectTransaction(transaction: Transaction) {
+    explainSheetRef.current?.dismiss();
+    const merchant = getMerchantById(transaction.merchantId);
+    const account = getAccountById(transaction.accountId);
+    if (!merchant || !account) return;
+    const amount = (Math.abs(transaction.amountCents) / 100).toFixed(0);
+    router.push({
+      pathname: "/copilot-search-result",
+      params: {
+        transactionId: transaction.id,
+        query: `Why was ${account.currency} ${amount} charged by ${merchant.name} on ${formatDayMonth(transaction.date)}?`,
+      },
+    });
+  }
 
   return (
     // Matches HeroBanner's gradient top stop so scroll-bounce overscroll
     // reveals the hero's own dark color instead of the default white Screen bg.
-    <Screen edges={["bottom"]} style={{ backgroundColor: "#05060d" }}>
+    <Screen edges={[]} style={{ backgroundColor: "#05060d" }}>
       <Header
         variant="transparent"
         title="AI banking copilot"
@@ -63,7 +86,9 @@ export function HomeScreen() {
             </View>
 
             <View className="px-5">
-              <SearchBar />
+              <SearchBar
+                onSubmit={(query) => router.push({ pathname: "/copilot-search-result", params: { query } })}
+              />
             </View>
 
             {/* Invisible spacer container — the only source of the gap
@@ -74,7 +99,11 @@ export function HomeScreen() {
                 showsHorizontalScrollIndicator={false}
                 contentContainerClassName="gap-2 px-4"
               >
-                <QuickActionChip icon={<MessageSquareMoreFilledIcon size={16} />} label={"Explain\ntransactions"} />
+                <QuickActionChip
+                  icon={<MessageSquareMoreFilledIcon size={16} />}
+                  label={"Explain\ntransactions"}
+                  onPress={() => explainSheetRef.current?.present()}
+                />
                 <QuickActionChip icon={<Icon icon={Search} size={16} color="navy" />} label={"Analyze\nspending"} />
                 <QuickActionChip icon={<CreditCardFilledIcon size={16} />} label={"Find best\nproducts"} />
                 <QuickActionChip icon={<TriangleAlertFilledIcon size={16} />} label={"Report an\nissue"} />
@@ -83,7 +112,10 @@ export function HomeScreen() {
           </View>
         </HeroBanner>
 
-        <View className="gap-6 rounded-t-xl bg-surface-muted px-4 pt-6 pb-8">
+        <View
+          className="gap-6 rounded-t-xl bg-surface-muted px-4 pt-6"
+          style={{ paddingBottom: insets.bottom + 32 }}
+        >
           <View className="gap-2">
             <SectionHeader title="Proactive insights" actionLabel={`View all(${insights.length})`} />
             <View className="gap-2">
@@ -115,6 +147,15 @@ export function HomeScreen() {
           </View>
         </View>
       </ScrollView>
+
+      <ExplainTransactionSheet
+        ref={explainSheetRef}
+        onSelectTransaction={handleSelectTransaction}
+        onViewAll={() => {
+          explainSheetRef.current?.dismiss();
+          router.push("/transactions");
+        }}
+      />
     </Screen>
   );
 }

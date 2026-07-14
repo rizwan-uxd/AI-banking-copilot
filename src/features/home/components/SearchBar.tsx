@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { BlurView } from "expo-blur";
 import { GlassView, isLiquidGlassAvailable } from "expo-glass-effect";
@@ -11,6 +11,8 @@ import { VoiceWaveform } from "./VoiceWaveform";
 
 export interface SearchBarProps {
   onPress?: () => void;
+  /** Called with the typed query when the user submits (return/search key). */
+  onSubmit?: (query: string) => void;
 }
 
 /** Light frosted-glass tint — see-through but with a soft white veil. */
@@ -44,19 +46,29 @@ const hasLiquidGlass = isLiquidGlassAvailable();
  * animated `VoiceWaveform` on the trailing edge and the white `SearchBarBeam`
  * glow sweeping the border.
  */
-export function SearchBar({ onPress }: SearchBarProps) {
+export function SearchBar({ onPress, onSubmit }: SearchBarProps) {
   const { colors } = useAppTheme();
   const inputRef = useRef<TextInput>(null);
+  const [value, setValue] = useState("");
 
   const handlePress = () => {
     onPress?.();
     inputRef.current?.focus();
   };
 
+  const handleSubmit = () => {
+    if (!value.trim()) return;
+    onSubmit?.(value.trim());
+    setValue("");
+  };
+
   const content = (
     <>
       <TextInput
         ref={inputRef}
+        value={value}
+        onChangeText={setValue}
+        onSubmitEditing={handleSubmit}
         placeholder="Ask about your finances..."
         placeholderTextColor={colors.textMuted}
         // Native caret + selection in the dark brand color (Figma cursor).

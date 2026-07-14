@@ -14,3 +14,5 @@ export { Icon } from "./Icon";
 export type { IconProps } from "./Icon";
 export { PressableScale } from "./PressableScale";
 export type { PressableScaleProps } from "./PressableScale";
+export { SegmentedControl } from "./SegmentedControl";
+export type { SegmentedControlProps, SegmentedControlOption } from "./SegmentedControl";

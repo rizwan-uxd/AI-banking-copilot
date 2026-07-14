@@ -10,6 +10,37 @@
     "status": "posted"
   },
   {
+    "id": "txn_0291235",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_dewa",
+    "amountCents": -25000,
+    "category": "bills",
+    "date": "2026-07-14",
+    "description": "Utility bill payment",
+    "status": "posted",
+    "referenceNumber": "TXN291235"
+  },
+  {
+    "id": "txn_0032",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_carrefour",
+    "amountCents": -14275,
+    "category": "groceries",
+    "date": "2026-07-13",
+    "description": "Supermarket",
+    "status": "posted"
+  },
+  {
+    "id": "txn_0033",
+    "accountId": "acc_checking_primary",
+    "merchantId": "mer_starbucks",
+    "amountCents": -3250,
+    "category": "dining",
+    "date": "2026-07-11",
+    "description": "Coffee shop",
+    "status": "posted"
+  },
+  {
     "id": "txn_0022",
     "accountId": "acc_credit_primary",
     "merchantId": "mer_target",

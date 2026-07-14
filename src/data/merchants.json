@@ -1,6 +1,8 @@
 [
   { "id": "mer_greenfield_grocer", "name": "Greenfield Grocer", "defaultCategory": "groceries" },
   { "id": "mer_trader_joes", "name": "Trader Joe's", "defaultCategory": "groceries" },
+  { "id": "mer_carrefour", "name": "Carrefour", "defaultCategory": "groceries" },
+  { "id": "mer_starbucks", "name": "Starbucks", "defaultCategory": "dining" },
   { "id": "mer_blue_bottle", "name": "Blue Bottle Coffee", "defaultCategory": "dining" },
   { "id": "mer_the_ramen_bar", "name": "The Ramen Bar", "defaultCategory": "dining" },
   { "id": "mer_uber", "name": "Uber", "defaultCategory": "transport" },
@@ -12,6 +14,7 @@
   { "id": "mer_netflix", "name": "Netflix", "defaultCategory": "subscriptions" },
   { "id": "mer_icloud", "name": "iCloud+", "defaultCategory": "subscriptions" },
   { "id": "mer_citypower", "name": "City Power & Light", "defaultCategory": "bills" },
+  { "id": "mer_dewa", "name": "Dewa", "defaultCategory": "bills" },
   { "id": "mer_metro_wireless", "name": "Metro Wireless", "defaultCategory": "bills" },
   { "id": "mer_horizon_realty", "name": "Horizon Realty", "defaultCategory": "bills" },
   { "id": "mer_acme_corp", "name": "Acme Corp Payroll", "defaultCategory": "income" },
