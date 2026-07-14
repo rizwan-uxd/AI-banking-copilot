@@ -11,9 +11,8 @@ import {
 import { ScrollView, View } from "react-native";
 
 import { QuickActionChip } from "@/components/banking/QuickActionChip";
-import { Icon, PressableScale, Screen, Text } from "@/components/ui";
+import { AppHeader, Icon, PressableScale, Screen, Text } from "@/components/ui";
 import { useAppTheme } from "@/design-system";
-import { CopilotHeader } from "@/features/copilot/components/CopilotHeader";
 import { RecommendationCard } from "@/features/copilot/components/RecommendationCard";
 
 export interface SpendingRecommendationsScreenProps {
@@ -34,7 +33,7 @@ export function SpendingRecommendationsScreen({ onBack, onBackToHome }: Spending
 
   return (
     <Screen edges={["bottom"]}>
-      <CopilotHeader
+      <AppHeader
         title="Analyze spending"
         leftAction={
           <PressableScale onPress={onBack} accessibilityRole="button" accessibilityLabel="Go back">

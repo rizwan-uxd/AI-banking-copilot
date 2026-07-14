@@ -6,9 +6,8 @@ import { Card } from "@atlas/ui-native";
 import { CategoryDonutChart, type CategoryDonutSegment } from "@/components/banking/CategoryDonutChart";
 import { ListRow } from "@/components/banking/ListRow";
 import { SectionHeader } from "@/components/banking/SectionHeader";
-import { Icon, PressableScale, Screen, Text } from "@/components/ui";
+import { AppHeader, Icon, PressableScale, Screen, Text } from "@/components/ui";
 import type { AnalysisScopeId, CustomDateRange, TimeRangeId } from "@/features/copilot/CopilotAnalyzeSpendingScreen";
-import { CopilotHeader } from "@/features/copilot/components/CopilotHeader";
 import { getAccounts } from "@/data/accounts";
 import { getInsights } from "@/data/insights";
 import { useAppTheme } from "@/design-system";
@@ -102,7 +101,7 @@ export function SpendingInsightsScreen({
 
   return (
     <Screen edges={["bottom"]}>
-      <CopilotHeader
+      <AppHeader
         title="Analyze spending"
         leftAction={
           <PressableScale onPress={onBack} accessibilityRole="button" accessibilityLabel="Go back">

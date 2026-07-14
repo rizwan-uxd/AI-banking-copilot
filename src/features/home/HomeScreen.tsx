@@ -67,6 +67,9 @@ export function HomeScreen() {
         // White to match Figma's back-chevron stroke (#F8F8F8) and the
         // adjacent white header title — both sit on the dark hero image.
         leftAction={<Icon icon={ChevronLeft} size={24} color="onAccent" strokeWidth={2} />}
+        // Atlas ships no fontFamily (ADR-011) — Header's title would otherwise render in the OS
+        // system font instead of Geist.
+        titleStyle={{ fontFamily: fontFamily.semibold }}
       />
       <ScrollView showsVerticalScrollIndicator={false}>
         <HeroBanner>
@@ -115,7 +118,11 @@ export function HomeScreen() {
                     })
                   }
                 />
-                <QuickActionChip icon={<CreditCardFilledIcon size={16} />} label={"Find best\nproducts"} />
+                <QuickActionChip
+                  icon={<CreditCardFilledIcon size={16} />}
+                  label={"Find best\nproducts"}
+                  onPress={() => router.push("/product-recommendations")}
+                />
                 <QuickActionChip icon={<TriangleAlertFilledIcon size={16} />} label={"Report an\nissue"} />
               </ScrollView>
             </View>

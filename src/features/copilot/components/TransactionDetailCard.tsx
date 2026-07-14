@@ -2,7 +2,7 @@ import { View } from "react-native";
 
 import { Card } from "@atlas/ui-native";
 
-import { DetailRow } from "@/features/copilot/components/DetailRow";
+import { DetailRow } from "@/components/banking/DetailRow";
 import { formatCurrency } from "@/lib/currency";
 import { formatMediumDate } from "@/lib/date";
 import type { Merchant, Transaction } from "@/types";

@@ -4,9 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { ScrollView, View } from "react-native";
 
 import { QuickActionChip } from "@/components/banking/QuickActionChip";
-import { Icon, PressableScale, Screen, Text } from "@/components/ui";
+import { AppHeader, Icon, PressableScale, Screen, Text } from "@/components/ui";
 import { ChatMessage } from "@/features/copilot/components/ChatMessage";
-import { CopilotHeader } from "@/features/copilot/components/CopilotHeader";
 import { CustomDateRangeSheet } from "@/features/copilot/components/CustomDateRangeSheet";
 import { OptionPill } from "@/features/copilot/components/OptionPill";
 
@@ -97,7 +96,7 @@ export function CopilotAnalyzeSpendingScreen({
 
   return (
     <Screen edges={["bottom"]}>
-      <CopilotHeader
+      <AppHeader
         title="Analyze spending"
         leftAction={
           <PressableScale onPress={onBack} accessibilityRole="button" accessibilityLabel="Go back">

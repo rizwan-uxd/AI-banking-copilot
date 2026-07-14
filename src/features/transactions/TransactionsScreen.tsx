@@ -10,6 +10,7 @@ import { Screen, SegmentedControl } from "@/components/ui";
 import { getAccounts } from "@/data/accounts";
 import { getMerchantById } from "@/data/merchants";
 import { getTransactionsByAccounts } from "@/data/transactions";
+import { fontFamily } from "@/design-system";
 import { formatDayMonth } from "@/lib/date";
 import type { Transaction } from "@/types";
 
@@ -48,7 +49,7 @@ export function TransactionsScreen() {
 
   return (
     <Screen edges={["bottom"]}>
-      <Header title="Transactions" />
+      <Header title="Transactions" titleStyle={{ fontFamily: fontFamily.semibold }} />
       <FlatList
         data={transactions}
         keyExtractor={(transaction) => transaction.id}

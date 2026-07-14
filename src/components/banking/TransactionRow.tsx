@@ -4,7 +4,7 @@ import { Pressable, View } from "react-native";
 import { Badge, Card } from "@atlas/ui-native";
 
 import { CategoryIcon } from "@/components/banking/CategoryIcon";
-import { Icon, Text } from "@/components/ui";
+import { BadgeLabel, Icon, Text } from "@/components/ui";
 import { getCategoryVisual } from "@/lib/category";
 import { formatCurrency } from "@/lib/currency";
 import { formatMediumDate } from "@/lib/date";
@@ -52,7 +52,9 @@ export function TransactionRow({ transaction, merchant, currency, onPress }: Tra
             <Text variant="caption" color="secondary">
               {transaction.description}
             </Text>
-            <Badge variant={BADGE_VARIANT_FOR_TONE[visual.tone]}>{visual.label}</Badge>
+            <Badge variant={BADGE_VARIANT_FOR_TONE[visual.tone]}>
+              <BadgeLabel>{visual.label}</BadgeLabel>
+            </Badge>
           </View>
           <View className="items-end" style={{ gap: 4 }}>
             <Text variant="body" className="font-sans-semibold">

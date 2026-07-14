@@ -8,10 +8,17 @@ export interface DetailRowProps {
   value: string;
   avatarLabel?: string;
   showDivider: boolean;
+  /** Value text color. @default "primary" */
+  valueColor?: "primary" | "positive";
 }
 
-/** Single label/value row inside a copilot detail card (e.g. `TransactionDetailCard`, `DisputeSummaryCard`) — extracted for reuse across every "Figma-style key/value card" the copilot flow needs. */
-export function DetailRow({ label, value, avatarLabel, showDivider }: DetailRowProps) {
+/**
+ * Single label/value row inside a "Figma-style key/value card" — extracted for reuse across every
+ * card that needs one (`TransactionDetailCard`, `DisputeSummaryCard`, product stat cards). Promoted
+ * from copilot-only to shared `components/banking/` once the product-recommendations flow needed
+ * the same row shape outside the chat screens.
+ */
+export function DetailRow({ label, value, avatarLabel, showDivider, valueColor = "primary" }: DetailRowProps) {
   const { colors } = useAppTheme();
   return (
     <View className={showDivider ? "border-b border-border pb-2 mb-2" : undefined}>
@@ -20,7 +27,7 @@ export function DetailRow({ label, value, avatarLabel, showDivider }: DetailRowP
           {label}
         </Text>
         <View className="flex-row items-center gap-2">
-          <Text variant="body" className="font-sans-semibold" color="primary">
+          <Text variant="body" className="font-sans-semibold" color={valueColor}>
             {value}
           </Text>
           {avatarLabel ? (

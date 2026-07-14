@@ -3,10 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { ScrollView, View } from "react-native";
 
 import { QuickActionChip } from "@/components/banking/QuickActionChip";
-import { Icon, PressableScale, Screen, Text } from "@/components/ui";
+import { AppHeader, Icon, PressableScale, Screen, Text } from "@/components/ui";
 import { useAppTheme } from "@/design-system";
 import { ChatMessage } from "@/features/copilot/components/ChatMessage";
-import { CopilotHeader } from "@/features/copilot/components/CopilotHeader";
 import { MessageComposer } from "@/features/copilot/components/MessageComposer";
 import { TransactionDetailCard } from "@/features/copilot/components/TransactionDetailCard";
 import { getAccountById } from "@/data/accounts";
@@ -105,7 +104,7 @@ export function CopilotSearchResultScreen({
 
   return (
     <Screen edges={["bottom"]}>
-      <CopilotHeader
+      <AppHeader
         title={stage === "result" ? `Why ${amountLabel} deducted?` : "Raise a dispute"}
         leftAction={
           <PressableScale onPress={onBack} accessibilityRole="button" accessibilityLabel="Go back">

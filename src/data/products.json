@@ -1,0 +1,32 @@
+[
+  {
+    "id": "prod_emirates_skywards_infinite",
+    "name": "Emirates Skywards Infinite Credit Card",
+    "shortName": "Emirates Skywards Infinite",
+    "network": "VISA",
+    "matchLabel": "Best match",
+    "annualFeeCents": 105000,
+    "estYearlyValueCents": 380000,
+    "netBenefitPerYearCents": 275000,
+    "milesRate": "Up to 2.5 Miles/AED",
+    "airportLoungeAccess": "Unlimited",
+    "fxFeePercent": 2.99,
+    "approvalChanceLabel": "Very high (96%)",
+    "reasons": [
+      { "icon": "flight", "text": "You spend AED 48,000+ annually on flights" },
+      { "icon": "flight", "text": "Emirates is your most frequent airline" },
+      { "icon": "lounge", "text": "Airport lounge visits increased 62%" },
+      { "icon": "wallet", "text": "You currently earn only 0.5 Miles / AED" }
+    ],
+    "estimatedYearlyRewardsLabel": "42,600 Skyward miles",
+    "aiConfidencePercent": 91,
+    "eligibilitySteps": ["Income requirement", "Existing customer", "Credit score", "Spending pattern"],
+    "approvalProbabilityPercent": 91,
+    "benefits": [
+      "No documents required (eKYC)",
+      "Instant digital approval",
+      "Card delivered in 2-3 working days",
+      "No impact on credit score"
+    ]
+  }
+]
