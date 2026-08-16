@@ -18,6 +18,7 @@ import {
 import { GeistMono_400Regular, GeistMono_500Medium } from "@expo-google-fonts/geist-mono";
 
 import { AppThemeProvider } from "@/design-system";
+import { WebDeviceFrame } from "@/components/ui";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -47,7 +48,9 @@ export default function RootLayout() {
       <SafeAreaProvider>
         <AppThemeProvider>
           <BottomSheetModalProvider>
-            <Stack screenOptions={{ headerShown: false }} />
+            <WebDeviceFrame>
+              <Stack screenOptions={{ headerShown: false }} />
+            </WebDeviceFrame>
             <StatusBar style="auto" />
           </BottomSheetModalProvider>
         </AppThemeProvider>

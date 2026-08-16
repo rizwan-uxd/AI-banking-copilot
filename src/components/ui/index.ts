@@ -22,3 +22,5 @@ export { ProgressBar } from "./ProgressBar";
 export type { ProgressBarProps } from "./ProgressBar";
 export { BadgeLabel } from "./BadgeLabel";
 export type { BadgeLabelProps } from "./BadgeLabel";
+export { WebDeviceFrame } from "./WebDeviceFrame";
+export type { WebDeviceFrameProps } from "./WebDeviceFrame";
