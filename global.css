@@ -33,23 +33,15 @@
   --color-info: 0 135 196;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: 8 10 13;
-    --color-surface: 20 24 28;
-    --color-surface-elevated: 36 41 46;
-    --color-surface-muted: 36 41 46;
-    --color-border: 36 41 46;
-    --color-text-primary: 249 250 251;
-    --color-text-secondary: 154 162 169;
-    --color-text-muted: 107 116 124;
-    --color-accent: 75 127 247;
-    --color-accent-muted: 10 29 72;
-    --color-navy: 10 29 72;
-    --color-on-accent: 255 255 255;
-    --color-positive: 1 163 93;
-    --color-negative: 235 66 68;
-    --color-warning: 219 163 0;
-    --color-info: 0 160 218;
-  }
-}
+/*
+ * No `prefers-color-scheme: dark` block by design. Figma specifies this
+ * product in light only (see `theme.ts`: "Dark-mode equivalents were not
+ * specified in Figma"), so a dark palette here would render an undesigned
+ * screen to every viewer whose device is set to dark — which is exactly what
+ * happened on the hosted build. The app pins `AppThemeProvider` to `light`
+ * for the same reason; both switches must agree, since this file drives the
+ * NativeWind classes while the provider drives Atlas components.
+ *
+ * When dark mode is actually designed, restore a dark block here AND drop the
+ * provider's `colorScheme` override in `app/_layout.tsx` together.
+ */

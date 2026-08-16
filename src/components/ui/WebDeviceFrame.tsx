@@ -1,6 +1,8 @@
 import { useCallback, useState, type ReactNode } from "react";
 import { Platform, View, useWindowDimensions, type LayoutChangeEvent } from "react-native";
 
+import { ViewportProvider } from "@/hooks/useViewport";
+
 /**
  * Web-only presentation wrapper for the hosted demo.
  *
@@ -62,7 +64,10 @@ export function WebDeviceFrame({ children }: WebDeviceFrameProps) {
           boxShadow: "0 24px 64px rgba(0, 0, 0, 0.45)",
         }}
       >
-        {children}
+        {/* Screens sizing themselves to "the screen" must get the shell, not the window. */}
+        <ViewportProvider width={DEVICE_WIDTH} height={frameHeight}>
+          {children}
+        </ViewportProvider>
       </View>
     </View>
   );

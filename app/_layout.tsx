@@ -45,16 +45,23 @@ export default function RootLayout() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView}>
-      <SafeAreaProvider>
-        <AppThemeProvider>
-          <BottomSheetModalProvider>
-            <WebDeviceFrame>
+      {/*
+        WebDeviceFrame sits *outside* SafeAreaProvider so the provider measures
+        the framed area rather than the browser window. Screens that size
+        themselves to the viewport (HeroBanner) then get the phone-sized box
+        they expect instead of the full desktop window.
+      */}
+      <WebDeviceFrame>
+        <SafeAreaProvider>
+          {/* Pinned to light: this product is only designed in light — see global.css. */}
+          <AppThemeProvider colorScheme="light">
+            <BottomSheetModalProvider>
               <Stack screenOptions={{ headerShown: false }} />
-            </WebDeviceFrame>
-            <StatusBar style="auto" />
-          </BottomSheetModalProvider>
-        </AppThemeProvider>
-      </SafeAreaProvider>
+              <StatusBar style="light" />
+            </BottomSheetModalProvider>
+          </AppThemeProvider>
+        </SafeAreaProvider>
+      </WebDeviceFrame>
     </GestureHandlerRootView>
   );
 }

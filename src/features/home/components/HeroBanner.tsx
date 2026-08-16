@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
-import { useWindowDimensions, View } from "react-native";
+import { View } from "react-native";
 import { Image } from "expo-image";
+
+import { useViewport } from "@/hooks/useViewport";
 
 export interface HeroBannerProps {
   children: ReactNode;
@@ -13,14 +15,20 @@ const heroBackground = require("@/assets/images/home/hero-background.png");
  * "bg") — the actual composited image asset, bundled locally (no network
  * call at runtime). The asset is sized for one full device screen (its
  * black→navy→pale-blue gradient spans an entire viewport, not just the
- * shorter hero-content area), so it's rendered at `useWindowDimensions()`
- * height and allowed to overflow past this wrapper's own (shorter,
- * content-hugging) box. The white content card that follows in scroll order
- * paints over the rest, so its rounded-corner cutout reveals the image's own
- * pale-blue lower portion instead of a flat fallback color.
+ * shorter hero-content area), so it's rendered at full-viewport height and
+ * allowed to overflow past this wrapper's own (shorter, content-hugging) box.
+ * The white content card that follows in scroll order paints over the rest, so
+ * its rounded-corner cutout reveals the image's own pale-blue lower portion
+ * instead of a flat fallback color.
+ *
+ * Sized from `useViewport()`, not `useWindowDimensions()`. The two are
+ * identical on device, but on web the app renders inside a phone-sized shell
+ * while the window is the whole desktop browser — sizing to the window drew
+ * this image several times too wide and cropped the gradient to a black
+ * sliver.
  */
 export function HeroBanner({ children }: HeroBannerProps) {
-  const { width, height } = useWindowDimensions();
+  const { width, height } = useViewport();
 
   return (
     <View>
