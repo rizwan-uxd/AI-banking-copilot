@@ -371,6 +371,57 @@ keeps figures aligned) with a cleaner, more geometric character. No change to an
 
 ---
 
+## ADR-016 — Light-only theme (no dark mode)
+**Status:** Accepted (2026-08-17)
+
+**Context.** Figma specifies this product in light only; no dark frames exist, and `theme.ts` already
+recorded that "dark-mode equivalents were not specified in Figma". Despite that, the app shipped a
+hand-written dark palette in two places that switched **independently**:
+
+- `AppThemeProvider` (React context) followed `useColorScheme()` → drove Atlas components.
+- `global.css` switched every NativeWind color token on `@media (prefers-color-scheme: dark)`.
+
+On the hosted build, any viewer with a dark-mode device saw an undesigned screen matching no Figma
+frame. Because the two switches were independent, forcing only the provider to light produced a
+half-themed result (white chips on a dark sheet) — which is what made this hard to diagnose.
+
+**Decision.** Ship light only. The dark block is **removed** from `global.css` (not left dormant),
+and `AppThemeProvider` is pinned with `colorScheme="light"` in `app/_layout.tsx`. `StatusBar` is set
+to `light` to stay legible against the black hero. The dark palettes in `theme.ts` remain defined but
+unreferenced.
+
+**Consequences.** Every viewer sees the designed screen regardless of device settings. Dark mode is
+now a deliberate future project requiring Figma frames first. **If it is ever added, both switches
+must be restored together** — a comment in `global.css` says so. The `colorScheme` override prop on
+`AppThemeProvider` (already present for testing) is now load-bearing.
+
+---
+
+## ADR-017 — Web hosting on Vercel, with a responsive device frame
+**Status:** Accepted (2026-08-17)
+
+**Context.** The prototype needed to be shareable with reviewers. Expo Go can no longer run it —
+store Expo Go has been frozen at SDK 54 since May 2026 and this project is SDK 57 — so the phone
+path requires a development build. The app was already configured for `web.output: "static"` and has
+no backend, so the web export is a pure static bundle.
+
+**Decision.** Host the static web export on Vercel, connected to the GitHub repo so every push to
+`main` auto-deploys. `vercel.json` pins framework `null`, `npx expo export --platform web` → `dist`,
+`cleanUrls`. No CLI auth, no secrets, no environment variables.
+
+Presentation is viewport-dependent: `WebDeviceFrame` renders the app full-bleed below 768px (phone
+browsers) and centres it in a 390×844 shell at or above that, so a mobile layout is never stretched
+across a desktop window. Web-only, inert on native.
+
+**Consequences.** Reviewing the prototype no longer depends on the Expo Go situation. A shell that
+is not the window introduces a rule: **any view sizing itself to the viewport must use
+`useViewport()`, never `useWindowDimensions()`** — `HeroBanner` broke on exactly this. Note
+`useSafeAreaFrame()` is not a substitute; on web it reports window metrics wherever it sits in the
+tree. Per-deployment URLs are login-protected, so only the clean alias
+(`ai-banking-copilot.vercel.app`) is shareable.
+
+---
+
 ## Open decisions awaiting input
 
 These were raised during planning and are not yet locked. Current working defaults in brackets.

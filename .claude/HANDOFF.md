@@ -9,18 +9,21 @@ behaves like a real banking app. **No backend, no APIs** — local JSON + a dete
 mock "AI" engine. Prototype for UX validation, not production.
 
 ## 2. Current implementation status
-**Sprint 0 (Phase 0) complete and verified** — see `.claude/roadmap.md` for full exit-criteria
-detail. Expo 57 app boots on iOS (Simulator, confirmed) + Web (dev server, confirmed); Android
-bundles only (no local Android emulator on this machine). Atlas vendored + `AppThemeProvider`
-(app-owned override layer around Atlas's `ThemeContext`) mounted at root. Geist typography loaded.
-Navigation shell live: `app/(tabs)/` with a custom `Slot` + Atlas `TabBar` layout and 4 placeholder
-routes (Home, Transactions, Copilot, Profile). Shared primitives (`Screen`, `Text`, `Container`,
-`Section`, `Spacer`, `Divider`, `Icon`) and mock data (types + seed JSON + loaders in `src/data/`,
-107 transactions / 3 accounts / 17 merchants over ~90 days) are in place. `tsc` is clean for all
-app code (`app/`, `src/`); a known, documented, non-blocking set of pre-existing type errors remains
-inside vendored Atlas source (see ADR-014 "Known limitation" and roadmap.md "Known limitations").
-**No product screens built yet** — all 4 routes are placeholders. Next task is Screen 1 (Home /
-Dashboard) from Figma.
+**Home screen + all three copilot flows are built, and the prototype is publicly hosted.**
+
+Screens live: Home (`app/(tabs)/index.tsx`, Figma node 224:1496) plus the three chatbot flows —
+search/dispute, spending analysis, and product recommendations — across `app/copilot-*.tsx`,
+`app/offering-detail.tsx`, `app/eligibility-*.tsx`, `app/product-recommendations.tsx`. 19 routes
+total in the web export.
+
+**Hosted at https://ai-banking-copilot.vercel.app** — see §14. This is now the primary way to
+review the prototype; Expo Go can no longer run it (§15).
+
+`tsc --noEmit` is clean for all app code (`app/`, `src/`). The known, non-blocking pre-existing type
+errors inside vendored Atlas source remain (ADR-014 "Known limitation", roadmap.md "Known
+limitations"). Atlas vendored + `AppThemeProvider` mounted at root; Geist loaded; `app/(tabs)/`
+shell with custom `Slot` + Atlas `TabBar`. Mock data: 107 transactions / 3 accounts / 17 merchants
+over ~90 days, AED-denominated.
 
 ## 3. Final architecture decisions
 - **Stack:** Expo SDK 57 · React Native 0.86 · React 19.2 · TypeScript strict · Expo Router (typed
@@ -47,6 +50,7 @@ Dashboard) from Figma.
   009 `@gorhom/bottom-sheet` (planned for app UX) · 011 Atlas is the base design system · 012 Atlas
   integration constraints (separate repos, Expo 57, styling/override rules) · **014 Atlas consumed
   as pinned vendored source (prototype-only)** · **015 Geist typeface (supersedes 008)**.
+- **016 light-only theme (no dark mode)** · **017 web hosting on Vercel + device frame**.
 - ADR-008 (Inter) = **superseded by 015**. ADR-010 (Lottie) = open/deferred (default: no).
   ADR-013 (GitHub Packages) = **superseded by 014**.
 
@@ -74,10 +78,14 @@ Badge, Alert, Dialog, Tabs, NavBar (Header, TabBar).
   renders one Atlas Button (Expo 57); single RN; colors unchanged.
 
 ## 7. Remaining work
-- Phase 1 (remaining): Zustand stores, `lib/` (currency, date, aggregation), remaining UI primitives
+- Screens still placeholder: Transactions, Copilot tab, Profile.
+- Phase 1 backfill (only as a screen needs it): Zustand stores, remaining UI primitives
   (Input, Sheet, Modal, Skeleton, Badge, Chip wrappers), component gallery screen.
-- Screens (from Figma, one at a time): Home/Dashboard → Transactions + detail → Copilot (mock AI
-  engine + chat UI) → Onboarding → Profile → Polish.
+- **Hero asset weight:** `assets/images/home/hero-background.png` is 2.2 MB and blocks the Home
+  screen's gradient on first paint over a slow connection. Compressing it is the highest-value
+  perf win on the hosted demo.
+- Dark mode remains undesigned and unshipped (ADR-016). If it is ever wanted, it needs Figma frames
+  first, then both switches flipped together.
 
 ## 8. Confirmed blockers
 None. Prior Atlas token crash is resolved. Non-blocking: no local Android emulator (live Android run
@@ -135,15 +143,61 @@ extend); `tsconfig.json` (`vendor` exclude + `@atlas/ui-native/theme/context` pa
 - No initial commit has been made in the app repo yet (commit/push only when the user asks).
 
 ## 13. Immediate next task
-Sprint 0 is complete and awaiting designer review (see `roadmap.md` "Status"). Once reviewed,
-implement **Screen 1 (Home/Dashboard)** from Figma: first inspect the Figma design (source of
-truth), then build the screen composing Atlas primitives + the Sprint 0 app primitives
-(`Screen`, `Text`, `Container`, `Section`, etc.) in `app/(tabs)/index.tsx` — one screen only,
-following all `.claude/CLAUDE.md` rules.
+Home and all three copilot flows are built, fixed, and live. **Awaiting the designer's direction on
+which screen is next** — the remaining placeholders are Transactions, Copilot tab, and Profile.
+Inspect Figma before building, one screen at a time, per `.claude/CLAUDE.md`.
+
+---
+
+## 14. Hosting (ADR-017)
+**Live: https://ai-banking-copilot.vercel.app** — Vercel project `ai-banking-copilot` under team
+`rizwans-projects-cb102166`, connected to `rizwan-uxd/AI-banking-copilot` via the GitHub
+integration. **Every push to `main` auto-deploys.** No CLI auth is needed or configured.
+
+`vercel.json` pins the build: framework `null`, `npx expo export --platform web` → `dist`,
+`cleanUrls`. The app was already set to `web.output: "static"`. Vercel's `npm install` runs the
+`postinstall` Atlas fetch, which works unauthenticated because the Atlas repo is public.
+
+Share the **clean alias only**. Per-deployment URLs (`ai-banking-copilot-<hash>-…vercel.app`) 302 to
+a login — Vercel protects them.
+
+To confirm a deploy actually landed, compare the served bundle hash rather than trusting the push:
+`curl -s https://ai-banking-copilot.vercel.app/ | grep -o 'entry-[a-f0-9]*\.js'`.
+
+**Web device frame:** `src/components/ui/WebDeviceFrame.tsx` wraps the app. Below a 768px viewport
+(phone browsers) it renders full-bleed; at or above it centres the app in a 390×844 shell. Web-only
+(`Platform.OS` guard), inert on native.
+
+Any view that sizes itself to "the screen" must use **`useViewport()`** (`src/hooks/useViewport.tsx`),
+never `useWindowDimensions()` — inside the frame the window is the whole desktop browser.
+`useSafeAreaFrame()` does **not** work as a substitute: on web it reports window metrics regardless
+of where it sits in the tree (verified). `HeroBanner` is the existing consumer.
+
+## 15. Expo Go no longer runs this project
+Store-distributed Expo Go has been **frozen at SDK 54 since May 2026** (Expo stopped shipping new
+versions to the App Store / Play Store). This project is SDK 57, so Expo Go on a phone will always
+report "Project is incompatible with this version of Expo Go". **Updating the app cannot fix it.**
+
+Options: the hosted web URL (§14, simplest); a development build (`npx expo run:android` /
+`run:ios`); or on Android only, the SDK 57 Expo Go APK from `expo.dev/go` — but Play Store
+auto-update will replace it with the frozen SDK 54 build, so disable auto-update for it. On iOS
+there is no free path — `eas go` needs a paid Apple Developer account.
+
+## 16. Two theming gotchas that cost real debugging time
+1. **Colors switch from two independent places.** `AppThemeProvider` (React context) drives Atlas
+   components; `global.css` CSS variables drive every NativeWind class. Changing one alone produces
+   a half-themed screen. They must always agree — see ADR-016.
+2. **`className` is silently inert on third-party components.** NativeWind only processes `className`
+   where it has interop registered. `<BottomSheetView className="flex-1 px-5">` dropped both the
+   padding and the flex with no error or warning, while an inline `style` on the same element
+   applied fine. Style any `@gorhom/bottom-sheet` (or other library) component via `style`, using
+   `spacing`/`radii` tokens rather than raw numbers.
 
 ---
 
 ## Next Task
-**Awaiting designer review of Sprint 0.** Once approved: inspect the Figma design for Screen 1
-(Home/Dashboard), then implement that single screen (compose Atlas + app primitives; no other
-screens).
+**Awaiting the designer's call on the next screen** (Transactions, Copilot tab, or Profile — all
+still placeholders). Inspect Figma first, build one screen only.
+
+Optional, unblocked: compress `assets/images/home/hero-background.png` (2.2 MB) to speed up first
+paint on the hosted demo.

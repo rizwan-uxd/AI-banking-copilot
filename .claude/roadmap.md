@@ -142,7 +142,10 @@ screen.
 - ☐ Haptics on key actions (expo-haptics)
 - ☐ Accessibility pass (labels, roles, contrast, dynamic type, reduced motion)
 - ☐ Empty / loading / error states everywhere
-- ☐ Web layout tuning and responsive checks
+- ☑ Web layout tuning and responsive checks (device frame ≥768px, full-bleed below — ADR-017)
+- ☑ Public hosting on Vercel, auto-deploy from `main` (ADR-017)
+- ☑ Theme locked to light-only; dark palette removed (ADR-016)
+- ☐ Compress `assets/images/home/hero-background.png` (2.2 MB — delays hero gradient on first paint)
 - ☐ Optional: Lottie animations (pending decision — see `decisions.md`)
 
 **Deliverable:** polished, demo-ready prototype.
