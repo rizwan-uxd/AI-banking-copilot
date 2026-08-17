@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react-native";
 import { BottomSheetBackdrop, BottomSheetModal, BottomSheetView, type BottomSheetBackdropProps } from "@gorhom/bottom-sheet";
 
 import { Icon, PressableScale, Text } from "@/components/ui";
-import { useAppTheme } from "@/design-system";
+import { spacing, useAppTheme } from "@/design-system";
 import { getTransactionDateBounds } from "@/data/transactions";
 import { daysInMonth, firstWeekdayOfMonth, formatMonthYear, todayIsoDate } from "@/lib/date";
 
@@ -123,7 +123,8 @@ export const CustomDateRangeSheet = forwardRef<BottomSheetModal, CustomDateRange
         handleIndicatorStyle={{ backgroundColor: colors.border }}
         onDismiss={handleClear}
       >
-        <BottomSheetView className="flex-1 px-5" style={{ gap: 16 }}>
+        {/* `style`, not `className` — NativeWind has no interop for BottomSheetView. */}
+        <BottomSheetView style={{ flex: 1, paddingHorizontal: spacing[5], gap: spacing[4] }}>
           <View className="flex-row items-start justify-between">
             <Text variant="heading" className="font-sans-semibold">
               Select custom range

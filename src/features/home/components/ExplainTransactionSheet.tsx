@@ -5,7 +5,7 @@ import { BottomSheetBackdrop, BottomSheetModal, BottomSheetView, type BottomShee
 
 import { TransactionRow } from "@/components/banking/TransactionRow";
 import { Icon, PressableScale, SegmentedControl, Text } from "@/components/ui";
-import { useAppTheme } from "@/design-system";
+import { spacing, useAppTheme } from "@/design-system";
 import { getAccounts } from "@/data/accounts";
 import { getMerchantById } from "@/data/merchants";
 import { getTransactionsByAccounts } from "@/data/transactions";
@@ -57,7 +57,13 @@ export const ExplainTransactionSheet = forwardRef<BottomSheetModal, ExplainTrans
         backgroundStyle={{ backgroundColor: colors.background }}
         handleIndicatorStyle={{ backgroundColor: colors.border }}
       >
-        <BottomSheetView className="flex-1 px-5" style={{ gap: 20 }}>
+        {/*
+          Styled via `style`, not `className`: NativeWind only processes
+          className on components it has interop for, and `BottomSheetView` is
+          third-party — a className here is silently dropped, which left the
+          sheet content with no horizontal padding at all.
+        */}
+        <BottomSheetView style={{ flex: 1, paddingHorizontal: spacing[5], gap: spacing[5] }}>
           <View className="flex-row items-start justify-between">
             <View className="flex-1" style={{ gap: 4 }}>
               <Text variant="heading" className="font-sans-semibold">
